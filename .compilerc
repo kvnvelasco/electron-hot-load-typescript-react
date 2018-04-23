@@ -1,0 +1,56 @@
+{
+  "env": {
+    "development": {
+      "text/typescript": {
+        "target": "es6",
+        "module": "commonjs",
+        "jsx": "react",
+        "lib": [
+          "es2015",
+          "dom",
+          "esnext.asynciterable"
+        ]
+      },
+      "application/javascript": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "electron": "1.8"
+              }
+            }
+          ],
+          "react"
+        ],
+        "plugins": [
+          "transform-async-to-generator",
+          "react-hot-loader/babel"
+        ],
+        "sourceMaps": "inline"
+      }
+    },
+    "production": {
+      "text/typescript": {
+        "sourceMaps": "none"
+      },
+      "application/javascript": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "electron": "1.8"
+              }
+            }
+          ],
+          "react"
+        ],
+        "plugins": [
+          "transform-async-to-generator"
+        ],
+        "sourceMaps": "none"
+      }
+    }
+  }
+}
